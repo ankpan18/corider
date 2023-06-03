@@ -26,15 +26,7 @@ const apiURL="https://qa.corider.in/assignment/chat?page=";
 
 function Chat() {
 
-  // const msgRef=useRef<null | HTMLParagraphElement>(null);
-  // const scrollDown = () => {
-  //   msgRef.current?.scrollIntoView({ behavior: "smooth" });
-  // };
-
-  
-
   const [page,setPage]=useState(1);
-  // const [day,setDay]=useState(true);
   // const [loading, setLoading] = useState(false); 
   const [chatData,setChatData]=useState([]);
   const [name, setName] = useState('');
@@ -56,47 +48,34 @@ function Chat() {
       setName(response.data.name);
       setTo(response.data.to);
       setFrom(response.data.from);
-      // scrollDown();
       // setLoading(false);
       
     })
   };
   return getData();
   
-  }, [page]);
+  }, [page]);// eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <div className="main-container">
       <div className="mod1">
-        {/* <FontAwesomeIcon icon={faArrowLeftLong} style={{flex:1}}/> */}
+       
         <img src={Back} alt="Back"/>
        <h2>  {name} </h2>
 
-       {/* <FontAwesomeIcon icon={faPenToSquare} style={{flex:1}}/> */}
        <img  src={Edit} alt="Edit" className='Edit'/>
        </div>
 
 
        <div className="mod2">
-       <img  src={OIP} alt="profile pic"/>
+       <img  src={OIP} alt="profile pic" className='img'/>
        <div className="sub1">
        <p>From <b>{from}</b></p>
       <p>To <b>{to}</b></p> 
       </div>
 
-       {/* <FontAwesomeIcon icon={faEllipsisVertical} style={{flex:1}}/> */}
-       {/* <button className="more" > */}
-       {/* <img onClick={handleClick} src={More} alt="Expand" /> */}
-       <img onClick={()=>{setToggle1(!toggle1)}} src={More} alt="Expand" />
-       {/* </button> */}
-         {/* // if (el.style.display==''){
-          //   el.style.display=='flex';
-          // }
-          // else if(el.style.display=='flex'){
-          //   el.style.display=='';
-          //*/ }
-      
-      
+    
+       <img onClick={()=>{setToggle1(!toggle1)}} src={More} alt="Expand" className='expand-btn'/>    
        <div className={"expand "+((toggle1) ? 'hidden' : '')} >
         <div className="ex2">
         <img src={mem} alt="Members"/> <p>Members</p>
@@ -111,15 +90,8 @@ function Chat() {
 
        </div>
 
-        {/* <div className="line1">
-        <span className="date1">
-        
-  </span>
-        </div> */}
-
         {/*Here is my Chat Data Displayed  */}
-        
-        {/* <ScrollableFeed> */}
+
       <div className="content" id="scrollableDiv"
       style={{
         height: 300,
@@ -130,29 +102,24 @@ function Chat() {
       >
 
 
-<InfiniteScroll loader={<h4>Loading...</h4>}
+<InfiniteScroll loader={<h4 style={{"margin": "0px auto"}}>Loading...</h4>}
 dataLength={chatData.length}
 next={()=>setPage(page+1)}
 style={{ display: 'flex', flexDirection: 'column-reverse' }} //To put endMessage and loader to the top.
 inverse={true} //
 hasMore={true}
 scrollableTarget="scrollableDiv">
-{chatData.map((v,index)=>(
-  // if({v["sender"]["self"]})>
-  // {
-  //   return <div styleName='tab active' >{name}</div>
-  // }
-  // else{
-    // console.log("self")
-    
+{chatData.map((v,index)=>(    
   
     <div key={index} >
       
     
-      {/* {(document.querySelector(`.line1[data-date="${}"]`))?:} */}
+   
       <div className="line1">
         <span className="date1">
     {(() => {
+
+      //Here I have shown date again for each message because dummy API has been used.
       var msg_date=new Date(v["time"]);
       // msg_date.setHours(0);
       // msg_date.setMinutes(0);
@@ -178,8 +145,7 @@ scrollableTarget="scrollableDiv">
   } </InfiniteScroll>
   
    </div>
-   {/* </InfiniteScroll> */}
-   {/* </ScrollableFeed> */}
+
 
         {/* This is my bottom input tag */}
 

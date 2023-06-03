@@ -31,9 +31,16 @@
     align-items: center;
     position: relative;
 }
-.mod2 img{
-    height: 52px;
+.mod2 .img{
+    height: 50px;
+    width: 50px;
     border-radius: 50%;
+}
+.mod2 .expand-btn{
+    height: 37px;
+    width: unset;
+    right: 17px;
+    position: absolute;
 }
 /* .more{ */
     /* height: 24px;
@@ -124,7 +131,7 @@
     margin-right: 24px;
     border-radius: 0 12px 12px 12px;
     padding: 8px;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 8px 0px;
     
 }
 
@@ -152,11 +159,13 @@
     margin-right: 6px;
     border-radius: 12px 12px 0 12px;
     padding: 8px;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 8px 0px;
     
 }
 
 .foot{
+    margin-bottom: 40px;
+    border-radius: 8px;
     padding-top: 2%;
     display: flex;
     background: white;
