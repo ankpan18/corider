@@ -8,7 +8,7 @@
     display: flex;
    /* justify-content:space-between; */
    align-items: center;
-   margin: 20px 16px 16px 16px;
+   margin: 10px 16px 10px 16px;
    position: relative;
 }
 
@@ -23,7 +23,7 @@
 
 .mod1 img{
     /* flex:1; */
-    width: 34px;
+    width: 25px;
 }
 
 .mod2{
@@ -37,7 +37,7 @@
     border-radius: 50%;
 }
 .mod2 .expand-btn{
-    height: 37px;
+    height: 30px;
     width: unset;
     right: 17px;
     position: absolute;
@@ -164,16 +164,16 @@
 }
 
 .foot{
-    margin-bottom: 40px;
+    margin-bottom: 20px;
     border-radius: 8px;
-    padding-top: 2%;
+    /* padding-top: 2%; */
     display: flex;
     background: white;
     height: 77px;
     align-items: center;    
 }
 .plane{
-    height: 50%;
+    height: 32%;
 }
 
 .Attachment_container{
@@ -201,8 +201,8 @@
 }
 
 .pa{
-    height:50%;
-    margin:18px;
+    height:38%;
+    margin:23px;
     
 }
 

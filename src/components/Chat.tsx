@@ -1,4 +1,4 @@
-import React, { useEffect,useState } from 'react'
+import React, { useEffect,useState,MouseEvent } from 'react'
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // import { faArrowLeftLong } from '@fortawesome/free-solid-svg-icons';
 // import { faPenToSquare } from '@fortawesome/free-solid-svg-icons';
@@ -19,12 +19,15 @@ import '../styles/Chat.css';
 import axios from "axios";
 // import ScrollableFeed from 'react-scrollable-feed';
 import InfiniteScroll from 'react-infinite-scroll-component';
-;
 
- 
+
+// document.querySelector('.expand-btn').addEventListener('click', (e:Event) => getModels());
+
 const apiURL="https://qa.corider.in/assignment/chat?page=";
 
 function Chat() {
+
+
 
   const [page,setPage]=useState(1);
   // const [loading, setLoading] = useState(false); 
@@ -34,8 +37,17 @@ function Chat() {
   const [from,setFrom]=useState('');
   const [toggle1,setToggle1]=useState(true);
   const [toggle2,setToggle2]=useState(true);
+  // var un_list:String[]=['expand-btn','expand','pa','options'];
 
-
+  const  handleClick=(event: MouseEvent)=> {
+    event.preventDefault();
+    const target = event.target as HTMLElement;
+    // if(un_list.includes(target.className)) return;
+    setToggle1(true);
+    setToggle2(true);
+    // console.log(un_list.includes(target.className));
+    console.log("check",target.className);
+  }
   useEffect(() => {
     // setLoading(true);
     
@@ -76,15 +88,15 @@ function Chat() {
 
     
        <img onClick={()=>{setToggle1(!toggle1)}} src={More} alt="Expand" className='expand-btn'/>    
-       <div className={"expand "+((toggle1) ? 'hidden' : '')} >
+       <div className={"expand "+((toggle1) ? 'hidden' : '')}  >
         <div className="ex2">
         <img src={mem} alt="Members"/> <p>Members</p>
         </div>
         <div className="ex2">
-        <img src={phone} alt="Members"/><p>Phone</p>
+        <img src={phone} alt="Phone"/><p>Phone</p>
         </div>
         <div className="ex2">
-        <img src={close} alt="Members"/><p>Close</p>
+        <img src={close} alt="Close"/><p>Close</p>
         </div>
        </div>
 
@@ -99,6 +111,7 @@ function Chat() {
         display: 'flex',
         flexDirection: 'column-reverse',
       }}
+      onClick={handleClick} 
       >
 
 
@@ -138,7 +151,8 @@ scrollableTarget="scrollableDiv">
     
     <div className={(v["sender"]["self"])?"contentfal":"contentdic"}>
       <img src={v["sender"]["image"]} alt="Profile" />
-      <p>{v["message"]}</p></div>
+      <p dangerouslySetInnerHTML={{__html: v["message"]}} ></p>
+      </div>
     </div>
   
 ))
