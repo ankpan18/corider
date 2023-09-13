@@ -2,6 +2,12 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Working Project Info
+This project is used to implement the usual behaviour of chat application on your phone i.e., Opened recent chat and fetched older ones by calling API with increased page number when scrolled up.
+It uses dummy API to fetch data. It is also available as a PWA application which you can install and use in your smartphone.
+![image](https://github.com/ankpan18/corider/assets/79756942/294c5cf7-4613-4664-9097-344ec66cf8f8)
+
+
 ## Available Scripts
 
 In the project directory, you can run:

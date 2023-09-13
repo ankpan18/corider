@@ -47,6 +47,8 @@ function Chat() {
     setToggle2(true);
     // console.log(un_list.includes(target.className));
     console.log("check",target.className);
+    // console.log(document.getElementById('scrollableDiv')?.className);
+    
   }
   useEffect(() => {
     // setLoading(true);
