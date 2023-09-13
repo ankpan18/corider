@@ -2,11 +2,27 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Live Project Link
+
+You can view the hosted project on this link: https://rococo-queijadas-67b6fb.netlify.app/
+
 ## Working Project Info
 This project is used to implement the usual behaviour of chat application on your phone i.e., Opened recent chat and fetched older ones by calling API with increased page number when scrolled up. \
-It uses dummy API to fetch data. It is also available as a PWA application which you can install and use in your smartphone,tablet or laptop.
+It uses dummy API to fetch data. It is also available as a PWA application which you can install and use in your smartphone, tablet or laptop.
+
+### Desktop View
 
 ![image](https://github.com/ankpan18/corider/assets/79756942/294c5cf7-4613-4664-9097-344ec66cf8f8)
+
+### Mobile View
+
+![7fc3f548-02d6-4465-aa39-a1453d46ae9f](https://github.com/ankpan18/corider/assets/79756942/8d87fffd-2108-4ba0-b72b-7be3c70f48f2)
+
+
+![a22d6426-db13-4457-a739-770463c18686](https://github.com/ankpan18/corider/assets/79756942/9b10b5fd-0a5d-4089-89e4-990b23cc04de)
+
+
+![06dabae3-a29e-4ac5-97ba-40ce1a132f91](https://github.com/ankpan18/corider/assets/79756942/5ea41559-1209-40c1-a034-9a0cb20c1879)
 
 
 ## Available Scripts
